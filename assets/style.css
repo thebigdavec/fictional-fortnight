@@ -1,10 +1,14 @@
 :root {
-  --shadow: 0 5px 5px #0005;
+  --shadow: 2px 5px 10px #0004;
+  --highlight: linear-gradient(150deg, #fafafa, #e8e8e8);
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -56,12 +60,12 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   padding: 1.5rem;
-  gap: 1rem;
+  gap: 1rem 1.6rem;
 }
 
 .card {
-  width: clamp(300px, 80%, 500px);
-  background-color: #f8f8f8;
+  max-width: 500px;
+  background-image: var(--highlight);
   padding: 1.4rem;
   border: 2px solid white;
   border-radius: 10px;
@@ -76,4 +80,20 @@ main {
 
 .shadow {
   box-shadow: var(--shadow);
+}
+
+@media (width < 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  p,
+  ul {
+    font-size: 1rem;
+  }
 }
